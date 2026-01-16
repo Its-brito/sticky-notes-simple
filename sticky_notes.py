@@ -23,7 +23,7 @@ NOTES_PER_COLUMN = 3
 
 # Pastel color palettes
 LIGHT_PASTELS = [
-    (255, 255, 204),  # pastel yellow
+    (255, 216, 0),  # pastel yellow - changed it to a better yellow
     (204, 229, 255),  # pastel blue
     (204, 255, 229),  # pastel mint
     (255, 204, 229),  # pastel pink
@@ -40,7 +40,7 @@ DARK_PASTELS = [
 ]
 
 # Helper for icon pixmaps
-ICON_SIZE = 20
+ICON_SIZE = 25 # biger is better
 
 def get_icon_pixmap(icon_name, theme='light'):
     # Use built-in Qt icons or draw simple SVGs for palette/color
@@ -432,7 +432,7 @@ class NoteWidget(QMainWindow):
         # Left section for editable title
         self.title_edit = QLineEdit(self.title)
         self.title_edit.setStyleSheet("font-weight: bold;")
-        self.title_edit.setFrame(False)
+        self.title_edit.setFrame(True)
         self.title_edit.setMaximumWidth(160)
         self.title_edit.editingFinished.connect(self.handle_title_change)
         header_layout.addWidget(self.title_edit)
